@@ -1,0 +1,18 @@
+[project]
+name = "pydoc-mintlify"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydoc-markdown>=4.8.2",
+    "typer>=0.20.0",
+    "watchfiles>=1.1.1",
+]
+
+[project.scripts]
+pydoc-mintlify = "pydoc_mintlify.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
