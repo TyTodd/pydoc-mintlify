@@ -1,3 +1,5 @@
+[![PyPI](https://img.shields.io/pypi/v/pydoc-mintlify)](https://pypi.org/project/pydoc-mintlify/)
+
 # pydoc-mintlify
 
 A pydoc-markdown plugin for Mintlify. Comes with a CLI to run a dev server with Mintlify and watch for changes.
