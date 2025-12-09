@@ -85,9 +85,6 @@ def _render_modules(modules: list[str], config_path: str) -> None:
     session.render(config)
 
 
-# ---------- internal helpers (no Typer stuff here) ----------
-
-
 def _docs_build_impl(config_path: str) -> int:
     """
     Perform a full docs render.
@@ -158,7 +155,7 @@ def build(
     ),
 ):
     """
-    One-shot docs generation (like `npm run build`).
+    One-shot docs generation. Builds all autogrenerated .mdx files for your .py files.
     """
     code = _docs_build_impl(config)
     raise typer.Exit(code)
@@ -169,7 +166,7 @@ def docs_watch(
     config: str = typer.Option(DEFAULT_CONFIG, "--config", "-c"),
 ):
     """
-    Watch Python sources & pydoc config and regenerate docs.
+    Watch Python sources & pydoc config and regenerate .mdx files.
     """
     _docs_watch_impl(config)
 
@@ -180,9 +177,8 @@ def dev(
 ):
     """
     Equivalent of your `npm run dev`:
-      1. docs-init
-      2. docs-watch (in background)
-      3. mint dev (foreground)
+      1. docs-watch, which watches your .py files and rebuilds the .mdx files when they change
+      2. mint dev, which runs the mintlify dev server and serves your .mdx files
     """
     # Initial full build; abort dev if it fails
     _docs_build_impl(config)
