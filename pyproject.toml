@@ -1,14 +1,19 @@
 [project]
 name = "pydoc-mintlify"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "pydoc-markdown plugin for Mintlify, auto-generate mintlify docs from your python docstrings"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
     "pydoc-markdown>=4.8.2",
     "typer>=0.20.0",
     "watchfiles>=1.1.1",
 ]
+homepage = "https://github.com/TyTodd/pydoc-mintlify"
+
+[project.urls]
+Homepage = "https://github.com/TyTodd/pydoc-mintlify"
+
 
 [project.scripts]
 pydoc-mintlify = "pydoc_mintlify.cli:app"
